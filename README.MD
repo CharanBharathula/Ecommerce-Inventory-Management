@@ -26,7 +26,7 @@ This project helps you learn how to design and implement a simple inventory mana
 
 ---
 
-## Milestone 2: Managing the Inventory
+## Milestone 2: 
 
 1. **Create the `Inventory` Class**:
     - This class will manage all the items in the inventory.
@@ -44,12 +44,7 @@ This project helps you learn how to design and implement a simple inventory mana
    - Write a method `addRecentlyViewedItem()` add the item to first in the list and check if the list size is greater than 5, remove the last item from the list.
    - Write another method called `displayRecentlyViewedItems()` to display the items in the list.
 
-
----
-
-## Milestone 3: Testing the Basic Inventory Management System
-
-1. **Test the Classes**:
+4. **Test the Classes**:
     - Create a class called `InventoryManagement` to test the inventory management system.
     - Write a `main` method in a separate class, such as `InventoryManagement.java`.
     - Create sample objects for each product type (e.g., a book, an electronic item).
@@ -59,7 +54,7 @@ This project helps you learn how to design and implement a simple inventory mana
 
 ---
 
-## Milestone 4: Order Management and Processing
+## Milestone 3: Order Management and Processing
 
 1. **Order Management**:
     - Create an `Order` class to represent customer orders which implements Comparable<Order> which lets to add a custom order.
@@ -85,7 +80,7 @@ This project helps you learn how to design and implement a simple inventory mana
     - Add sample orders to the `PriorityQueue` and test the `processOrder` method to ensure orders are processed correctly.
 ---
 
-## Milestone 5: Enhancing the Application
+## Milestone 4: Enhancing the Application
 
 1. **Search and Filter Functionality**:
     - Add methods to search for items based on criteria like name or category.

@@ -11,9 +11,7 @@ public class Item implements Comparable<Item> {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
-    }
-
-    @Override
+    }   @Override
     public int compareTo(Item o) {
         return this.getName().compareTo(o.getName());
     }

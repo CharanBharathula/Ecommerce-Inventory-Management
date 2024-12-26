@@ -14,7 +14,8 @@ public class Inventory<T extends Item> {
 
     public void addItem(T item, RecentlyViewedItems recentlyViewedItems){
         recentlyViewedItems.addRecentlyViewedItem(item);
-        inventory.put(item.getName(), item);    }
+        inventory.put(item.getName(), item);
+    }
 
     public T getItem(String id){
         return inventory.get(id);

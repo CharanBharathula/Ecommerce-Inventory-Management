@@ -11,10 +11,9 @@ public class RecentlyViewedItems {
     }
 
     public void addRecentlyViewedItem(Item item){
-        recentlyViewedItems.remove( item );
         recentlyViewedItems.addFirst(item);
 
-        if( recentlyViewedItems.size() == MAX_RECENTLY_VIEWED_ITEMS )
+        if( recentlyViewedItems.size() > MAX_RECENTLY_VIEWED_ITEMS )
             recentlyViewedItems.removeLast();
     }
 

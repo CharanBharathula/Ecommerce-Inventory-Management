@@ -56,5 +56,39 @@ public class InventoryManagement {
 
         // Recently viewed items - use LRU cache using LinkedList to maintain easily add and remove items
         recentlyViewedItems.displayRecentlyViewedItems();
+
+        // Test for order processing which process order by isExpressDelivery
+
+        OrderProcessing orderProcessing = new OrderProcessing();
+
+        // Test to process orders by amounts
+        //orderProcessing.setComparator(new OrderTotalAmountComparator());
+
+        Order order1 = new Order("1", true, 1000);
+        Order order2 = new Order("2", false, 2000);
+        Order order3 = new Order("3", true, 3000);
+        Order order4 = new Order("4", false, 4000);
+        Order order5 = new Order("5", true, 5000);
+
+        orderProcessing.addOrder(order1);
+        orderProcessing.addOrder(order2);
+        orderProcessing.addOrder(order3);
+        orderProcessing.addOrder(order4);
+        orderProcessing.addOrder(order5);
+
+
+        while( orderProcessing.size() > 0 ) {
+            Order order = orderProcessing.processOrder();
+            System.out.println( order.getOrderId()+", "+order.getTotalAmount() );
+        }
+
+        /* Order was processed by isExpressDelivery
+           Output : 1, 1000
+                    3, 3000
+                    5, 5000
+                    4, 4000
+                    2, 2000
+        */
+
     }
 }

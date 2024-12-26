@@ -12,7 +12,8 @@ public class Inventory<T extends Item> {
         inventory = new HashMap<>();
     }
 
-    public void addItem(T item){
+    public void addItem(T item, RecentlyViewedItems recentlyViewedItems){
+        recentlyViewedItems.addRecentlyViewedItem(item);
         inventory.put(item.getName(), item);
     }
 

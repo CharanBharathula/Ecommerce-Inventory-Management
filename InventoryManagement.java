@@ -24,36 +24,37 @@ public class InventoryManagement {
         Book cppBook = new Book("13", "C++", 400, 8, "Bjarne Stroustrup");
         Book cBook = new Book("14", "C", 300, 7, "Dennis Ritchie");
 
+
+        RecentlyViewedItems recentlyViewedItems = new RecentlyViewedItems();
+
         Inventory<Electronics> electronicsInventory = new Inventory<>();
-        electronicsInventory.addItem(lap);
-        electronicsInventory.addItem(mob);
-        electronicsInventory.addItem(tv);
-        electronicsInventory.addItem(ac);
-        electronicsInventory.addItem(fridge);
+        electronicsInventory.addItem(lap, recentlyViewedItems);
+        electronicsInventory.addItem(mob, recentlyViewedItems);
+        electronicsInventory.addItem(tv, recentlyViewedItems);
+        electronicsInventory.addItem(ac, recentlyViewedItems);
+        electronicsInventory.addItem(fridge, recentlyViewedItems);
 
         Inventory<Clothing> clothingInventory = new Inventory<>();
-        clothingInventory.addItem(shirt);
-        clothingInventory.addItem(pant);
-        clothingInventory.addItem(tshirt);
-        clothingInventory.addItem(jeans);
-        clothingInventory.addItem(saree);
+        clothingInventory.addItem(shirt, recentlyViewedItems);
+        clothingInventory.addItem(pant, recentlyViewedItems);
+        clothingInventory.addItem(tshirt, recentlyViewedItems);
+        clothingInventory.addItem(jeans, recentlyViewedItems);
+        clothingInventory.addItem(saree, recentlyViewedItems);
 
         Inventory<Book> bookInventory = new Inventory<>();
-        bookInventory.addItem(javaBook);
-        bookInventory.addItem(pythonBook);
-        bookInventory.addItem(cppBook);
-        bookInventory.addItem(cBook);
+        bookInventory.addItem(javaBook, recentlyViewedItems);
+        bookInventory.addItem(pythonBook, recentlyViewedItems);
+        bookInventory.addItem(cppBook, recentlyViewedItems);
+        bookInventory.addItem(cBook, recentlyViewedItems);
 
 
-        System.out.println("Electronics Inventory Before Sorting: ");
+//        System.out.println("Electronics Inventory: ");
+//
+//        for (Item item : electronicsInventory.getItems()) {
+//            System.out.println(item.getName());
+//        }
 
-        for (Item item : electronicsInventory.getItems()) {
-            System.out.println(item.getName());
-        }
-        Collections.sort(electronicsInventory.getItems());
-        System.out.println("Electronics Inventory After Sorting: ");
-        for (Item item : electronicsInventory.getItems()) {
-            System.out.println(item.getName());
-        }
+        // Recently viewed items - use LRU cache using LinkedList to maintain easily add and remove items
+        recentlyViewedItems.displayRecentlyViewedItems();
     }
 }
